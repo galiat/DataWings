@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20140315203043) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "data_transmitions", force: true do |t|
     t.integer  "firefly_id"
     t.datetime "sent_at"
@@ -26,7 +29,7 @@ ActiveRecord::Schema.define(version: 20140315203043) do
     t.datetime "updated_at"
   end
 
-  add_index "data_transmitions", ["firefly_id"], name: "index_data_transmitions_on_firefly_id"
+  add_index "data_transmitions", ["firefly_id"], name: "index_data_transmitions_on_firefly_id", using: :btree
 
   create_table "fireflies", force: true do |t|
     t.string   "device_id"
@@ -36,8 +39,8 @@ ActiveRecord::Schema.define(version: 20140315203043) do
     t.datetime "updated_at"
   end
 
-  add_index "fireflies", ["hospital_id"], name: "index_fireflies_on_hospital_id"
-  add_index "fireflies", ["sponsor_id"], name: "index_fireflies_on_sponsor_id"
+  add_index "fireflies", ["hospital_id"], name: "index_fireflies_on_hospital_id", using: :btree
+  add_index "fireflies", ["sponsor_id"], name: "index_fireflies_on_sponsor_id", using: :btree
 
   create_table "hospitals", force: true do |t|
     t.string   "name"

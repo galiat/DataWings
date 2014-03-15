@@ -11,9 +11,9 @@
     = f.text_field :device_id
   .field
     = f.label :hospital
-    = f.collection_select :hospital, Hospital.all, :name, :name, :include_blank => true
+    = f.collection_select :hospital_id, Hospital.all, :id, :name, :include_blank => true
   .field
     = f.label :sponsor
-    = f.collection_select :sponsor, Sponsor.all, :name, :name, :include_blank => true
+    = f.collection_select :sponsor_id, Sponsor.all, :id, :name, :include_blank => true
   .actions
     = f.submit 'Save'

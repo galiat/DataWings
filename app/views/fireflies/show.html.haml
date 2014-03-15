@@ -5,10 +5,10 @@
   = @firefly.device_id
 %p
   %b Hospital:
-  = @firefly.hospital
+  = @firefly.hospital.try :name
 %p
   %b Sponsor:
-  = @firefly.sponsor
+  = @firefly.sponsor.try :name
 
 = link_to 'Edit', edit_firefly_path(@firefly)
 \|
