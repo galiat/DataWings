@@ -12,8 +12,8 @@
   - @fireflies.each do |firefly|
     %tr
       %td= firefly.device_id
-      %td= firefly.hospital
-      %td= firefly.sponsor
+      %td= firefly.hospital.name
+      %td= firefly.sponsor.name
       %td= link_to 'Show', firefly
       %td= link_to 'Edit', edit_firefly_path(firefly)
       %td= link_to 'Destroy', firefly, :method => :delete, :data => { :confirm => 'Are you sure?' }
