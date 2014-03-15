@@ -1,0 +1,21 @@
+%h1 Listing hospitals
+
+%table
+  %tr
+    %th Name
+    %th Location
+    %th
+    %th
+    %th
+
+  - @hospitals.each do |hospital|
+    %tr
+      %td= hospital.name
+      %td= hospital.location
+      %td= link_to 'Show', hospital
+      %td= link_to 'Edit', edit_hospital_path(hospital)
+      %td= link_to 'Destroy', hospital, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Hospital', new_hospital_path

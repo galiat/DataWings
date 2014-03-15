@@ -1,0 +1,12 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @hospital.name
+%p
+  %b Location:
+  = @hospital.location
+
+= link_to 'Edit', edit_hospital_path(@hospital)
+\|
+= link_to 'Back', hospitals_path

@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b Device:
+  = @firefly.device_id
+%p
+  %b Hospital:
+  = @firefly.hospital
+%p
+  %b Sponsor:
+  = @firefly.sponsor
+
+= link_to 'Edit', edit_firefly_path(@firefly)
+\|
+= link_to 'Back', fireflies_path

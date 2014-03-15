@@ -1,0 +1,23 @@
+%h1 Listing fireflies
+
+%table
+  %tr
+    %th Device
+    %th Hospital
+    %th Sponsor
+    %th
+    %th
+    %th
+
+  - @fireflies.each do |firefly|
+    %tr
+      %td= firefly.device_id
+      %td= firefly.hospital
+      %td= firefly.sponsor
+      %td= link_to 'Show', firefly
+      %td= link_to 'Edit', edit_firefly_path(firefly)
+      %td= link_to 'Destroy', firefly, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Firefly', new_firefly_path

@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  firefly_id: 
+  sent_at: 2014-03-15 16:30:43
+  hour_meter: 1
+  high_temp: 1
+  low_temp: 1
+  min_voltage: 1
+  max_voltage: 1
+  error_code: MyString
+
+two:
+  firefly_id: 
+  sent_at: 2014-03-15 16:30:43
+  hour_meter: 1
+  high_temp: 1
+  low_temp: 1
+  min_voltage: 1
+  max_voltage: 1
+  error_code: MyString

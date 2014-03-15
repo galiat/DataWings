@@ -1,0 +1,30 @@
+%p#notice= notice
+
+%p
+  %b Firefly:
+  = @data_transmition.firefly
+%p
+  %b Sent at:
+  = @data_transmition.sent_at
+%p
+  %b Hour meter:
+  = @data_transmition.hour_meter
+%p
+  %b High temp:
+  = @data_transmition.high_temp
+%p
+  %b Low temp:
+  = @data_transmition.low_temp
+%p
+  %b Min voltage:
+  = @data_transmition.min_voltage
+%p
+  %b Max voltage:
+  = @data_transmition.max_voltage
+%p
+  %b Error code:
+  = @data_transmition.error_code
+
+= link_to 'Edit', edit_data_transmition_path(@data_transmition)
+\|
+= link_to 'Back', data_transmitions_path

@@ -1,0 +1,34 @@
+= form_for @data_transmition do |f|
+  - if @data_transmition.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@data_transmition.errors.count, "error")} prohibited this data_transmition from being saved:"
+      %ul
+        - @data_transmition.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :firefly
+    = f.collection_select :firefly, Firefly.all, :name, :name, :include_blank => true
+  .field
+    = f.label :sent_at
+    = f.datetime_select :sent_at
+  .field
+    = f.label :hour_meter
+    = f.number_field :hour_meter
+  .field
+    = f.label :high_temp
+    = f.number_field :high_temp
+  .field
+    = f.label :low_temp
+    = f.number_field :low_temp
+  .field
+    = f.label :min_voltage
+    = f.number_field :min_voltage
+  .field
+    = f.label :max_voltage
+    = f.number_field :max_voltage
+  .field
+    = f.label :error_code
+    = f.text_field :error_code
+  .actions
+    = f.submit 'Save'
