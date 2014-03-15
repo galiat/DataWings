@@ -8,7 +8,7 @@
 
   .field
     = f.label :firefly
-    = f.collection_select :firefly, Firefly.all, :name, :name, :include_blank => true
+    = f.collection_select :firefly_id, Firefly.all, :id, :name, :include_blank => true
   .field
     = f.label :sent_at
     = f.datetime_select :sent_at
