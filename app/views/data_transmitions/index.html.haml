@@ -1,6 +1,6 @@
 %h1 Listing data_transmitions
 
-%table
+%table{class: 'table'}
   %tr
     %th Firefly
     %th Sent at
@@ -16,7 +16,7 @@
 
   - @data_transmitions.each do |data_transmition|
     %tr
-      %td= data_transmition.firefly
+      %td= data_transmition.firefly.name
       %td= data_transmition.sent_at
       %td= data_transmition.hour_meter
       %td= data_transmition.high_temp

@@ -1,11 +1,35 @@
+/where are my Firefly? what cities, what hospitals? how many?
+/# of my Fireflies across the world
+/# newborns treated by my Firefly across the world
+/also one on the main page
+
 %p#notice= notice
 
-%p
-  %b Name:
+%h2
   = @sponsor.name
-%p
-  %b Email:
-  = @sponsor.email
+
+%h3
+  = "Total lives saved: #{@sponsor.lives_saved}"
+
+%h3 My Fireflies
+%table{class: 'table'}
+  %tr
+    %th Device
+    %th Hospital
+    %th Sponsor
+    %th Hours On
+    %th Lives Saves
+
+  - @sponsor.fireflies.each do |firefly|
+    %tr
+      %td= firefly.device_id
+      %td= firefly.hospital.try :name
+      %td= firefly.sponsor.try :name
+      %td= firefly.total_time
+      %td= firefly.lives_saved
+
+%br
+
 
 = link_to 'Edit', edit_sponsor_path(@sponsor)
 \|
