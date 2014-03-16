@@ -9,7 +9,7 @@ class Firefly < ActiveRecord::Base
   end
 
   def total_time
-    data_transmition.inject(0){|sum, dt| sum + dt.hour_meter}
+    data_transmition.inject(0){|sum, dt| sum + dt.total_time}
   end
 
   def lives_saved

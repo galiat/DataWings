@@ -7,6 +7,6 @@ class Sponsor < ActiveRecord::Base
   end
 
   def lives_saved
-    (total_time/(25 * 2.5)).round
+    (total_time/(24 * 2.5)).round
   end
 end
