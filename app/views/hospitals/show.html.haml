@@ -7,6 +7,9 @@
   %b Location:
   = @hospital.location
 
+%p
+  = image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@hospital.latitude}%2C#{@hospital.longitude}"
+
 = link_to 'Edit', edit_hospital_path(@hospital)
 \|
 = link_to 'Back', hospitals_path
