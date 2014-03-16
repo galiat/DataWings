@@ -1,28 +1,11 @@
-== README
+==Background
+Design that Matters created the Firefly infant phototherapy device(http://www.designthatmatters.org/impact/#ourwork) which is placed in hospitals in the developing world to treat newborns with jaundice. 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+==The Problem
+The only way to get useage number about the FireFly is to visit the remote hospitals it is placed in. The manufacturer offers a 3 year waruntee, but has discover people are not always using it. Further more, were a Firefly to break itwould be usefu to have error codes and environment data (eg ambient tempurature) to help diagnois what went wrong. The NGO that places it does not have useage statics to make decisions and apply for grants. The people who sponsor these devices being placed in gospitals also do not have tanigle way to see that their donation saves lives.
 
-Things you may want to cover:
+==Mission Statement
+Using data to provide health centers in limited resource settings with high impact medical equipment that works.
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+==Goal for Hacking Medicine's Grand Hackfest
+To design and prototype a data transmission system between the FireFly infant phototherapy device, the manufacturer, and Design That Matters to track use and facilitate maintenance of the device.
