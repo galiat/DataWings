@@ -2,7 +2,7 @@
 Design that Matters created the Firefly infant phototherapy device(http://www.designthatmatters.org/impact/#ourwork) which is placed in hospitals in the developing world to treat newborns with jaundice. 
 
 ==The Problem
-The only way to get useage number about the FireFly is to visit the remote hospitals it is placed in. The manufacturer offers a 3 year waruntee, but has discover people are not always using it. Further more, were a Firefly to break itwould be usefu to have error codes and environment data (eg ambient tempurature) to help diagnois what went wrong. The NGO that places it does not have useage statics to make decisions and apply for grants. The people who sponsor these devices being placed in gospitals also do not have tanigle way to see that their donation saves lives.
+The only way to get usage number about the FireFly is to visit the remote hospitals it is placed in. The manufacturer offers a 3 year waruntee, but has discover people are not always using it. Further more, were a Firefly to break it would be useful to have error codes and environment data (eg ambient temperature) to help diagnose what went wrong. The NGO that places it does not have usage statics to make decisions and apply for grants. The people who sponsor these devices being placed in hospitals also do not have tangible way to see that their donation saves lives.
 
 ==Mission Statement
 Using data to provide health centers in limited resource settings with high impact medical equipment that works.
