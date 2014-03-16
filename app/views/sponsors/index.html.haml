@@ -3,7 +3,7 @@
 %table{class: 'table'}
   %tr
     %th Name
-    %th Email
+    %th Total Fireflies
     %th
     %th
     %th
@@ -11,7 +11,7 @@
   - @sponsors.each do |sponsor|
     %tr
       %td= sponsor.name
-      %td= sponsor.email
+      %td= sponsor.fireflies.count
       %td= link_to 'Show', sponsor
       %td= link_to 'Edit', edit_sponsor_path(sponsor)
       %td= link_to 'Destroy', sponsor, :method => :delete, :data => { :confirm => 'Are you sure?' }

@@ -4,19 +4,16 @@
 /also one on the main page
 
 %p#notice= notice
-
-%h2
+%h1
   = @sponsor.name
-
-%h3
-  = "Total lives saved: #{@sponsor.lives_saved}"
+.yay
+  = "Your #{@sponsor.fireflies.count} #{'Firefly'.pluralize(@sponsor.fireflies.count)} saved #{@sponsor.lives_saved} #{'lives'.pluralize(@sponsor.lives_saved)} so far!"
 
 %h3 My Fireflies
 %table{class: 'table'}
   %tr
     %th Device
     %th Hospital
-    %th Sponsor
     %th Hours On
     %th Lives Saves
 
@@ -24,7 +21,6 @@
     %tr
       %td= firefly.device_id
       %td= firefly.hospital.try :name
-      %td= firefly.sponsor.try :name
       %td= firefly.total_time
       %td= firefly.lives_saved
 
