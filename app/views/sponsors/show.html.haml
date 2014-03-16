@@ -6,10 +6,11 @@
 %p#notice= notice
 %h1
   = @sponsor.name
-.yay
-  = "Your #{@sponsor.fireflies.count} #{'Firefly'.pluralize(@sponsor.fireflies.count)} saved #{@sponsor.lives_saved} #{'lives'.pluralize(@sponsor.lives_saved)} so far!"
+%h2.yay
+  = "Your #{@sponsor.fireflies.count} #{'Firefly'} saved #{@sponsor.lives_saved} #{'lives'.pluralize(@sponsor.lives_saved)} so far!"
 
-%h3 My Fireflies
+%p
+  My Fireflies
 %table{class: 'table'}
   %tr
     %th Device
