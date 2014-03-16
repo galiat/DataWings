@@ -1,5 +1,9 @@
 Datawings::Application.routes.draw do
-  resources :data_transmitions
+  resources :data_transmitions do
+    collection do
+      post :create_by_sms
+    end
+  end
 
   resources :fireflies
 

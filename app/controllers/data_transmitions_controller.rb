@@ -1,4 +1,5 @@
 class DataTransmitionsController < ApplicationController
+  skip_before_action :verify_authenticity_token, only: :create_by_sms
   before_action :set_data_transmition, only: [:show, :edit, :update, :destroy]
 
   # GET /data_transmitions
@@ -19,6 +20,21 @@ class DataTransmitionsController < ApplicationController
 
   # GET /data_transmitions/1/edit
   def edit
+  end
+
+  #{"ToCountry"=>"US", "ToState"=>"NH", "SmsMessageSid"=>"SM251ef298f7216216c75cfbe4a26f6c7f", "NumMedia"=>"0", "ToCity"=>"CHESTERFIELD", "FromZip"=>"01301",
+  #{}"SmsSid"=>"SM251ef298f7216216c75cfbe4a26f6c7f", "FromState"=>"MA", "SmsStatus"=>"received", "FromCity"=>"GREENFIELD", "Body"=>"Wings", "FromCountry"=>"US",
+  #{}"To"=>"+16035925883", "ToZip"=>"03466", "MessageSid"=>"SM251ef298f7216216c75cfbe4a26f6c7f", "AccountSid"=>"AC7dcea6002aae538d6f20e7544f6dae39",
+  #"From"=>"+14135121397", "ApiVersion"=>"2010-04-01"}
+
+  def create_by_sms
+    body = params[:body]
+    arr = body.split(',').map{|e| e.strip.split(' ')}
+    hash = Hash[arr]
+    @data_transmition = DataTransmition.new(hash)
+    @data_transmition.save
+
+    head 204
   end
 
   # POST /data_transmitions
