@@ -11,3 +11,7 @@
  *= require_self
  *= require_tree .
  */
+.yay
+  color: rgb(21, 59, 21);
+  background: rgb(111, 195, 116);
+  size='20px';
