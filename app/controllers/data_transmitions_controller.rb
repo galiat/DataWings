@@ -28,13 +28,14 @@ class DataTransmitionsController < ApplicationController
   #"From"=>"+14135121397", "ApiVersion"=>"2010-04-01"}
 
   def create_by_sms
-    body = params[:body]
+    #body = "firefly_id 1, sent_at 2014-03-16T00:49:00.000Z, hour_meter 12, high_temp 666, low_temp 2,min_voltage 112, max_voltage 121, error_code"
+    #body = params[body]
+    body = params[:Body]
+
     arr = body.split(',').map{|e| e.strip.split(' ')}
     hash = Hash[arr]
     @data_transmition = DataTransmition.new(hash)
     @data_transmition.save
-
-    head 204
   end
 
   # POST /data_transmitions
