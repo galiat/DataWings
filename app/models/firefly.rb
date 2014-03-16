@@ -15,4 +15,8 @@ class Firefly < ActiveRecord::Base
   def lives_saved
     (total_time/(25 * 2.5)).round
   end
+
+  def location
+    [hospital.latitude, hospital.longitude]
+  end
 end

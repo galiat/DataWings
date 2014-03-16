@@ -18,7 +18,7 @@
     %th Lives Saves
 
   - @sponsor.fireflies.each do |firefly|
-    %tr
+    %tr{ id: "device-row-#{firefly.device_id}" }
       %td= firefly.device_id
       %td= firefly.hospital.try :name
       %td= firefly.total_time
@@ -26,6 +26,7 @@
 
 %br
 
+#map-canvas
 
 = link_to 'Edit', edit_sponsor_path(@sponsor)
 \|
