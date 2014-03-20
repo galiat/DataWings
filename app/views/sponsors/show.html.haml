@@ -7,7 +7,7 @@
 %h1
   = @sponsor.name
 %h2.yay
-  = "Your #{@sponsor.fireflies.count} #{'Firefly'} saved #{@sponsor.lives_saved} #{'lives'.pluralize(@sponsor.lives_saved)} so far!"
+  = "Your #{@sponsor.fireflies.count} Firefly treated #{@sponsor.lives_saved} #{'newborn'.pluralize(@sponsor.lives_saved)} so far!"
 
 %p
   My Fireflies
@@ -15,8 +15,8 @@
   %tr
     %th Device
     %th Hospital
-    %th Hours On
-    %th Lives Saves
+    %th Total Hours
+    %th Newborns Treated
 
   - @sponsor.fireflies.each do |firefly|
     %tr{ id: "device-row-#{firefly.device_id}" }

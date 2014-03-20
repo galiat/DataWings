@@ -25,8 +25,8 @@ function initialize() {
 
       var infowindowContent = '<b>' + firefly.name + '</b>' +
       '<div><dl>' +
-      '<dt>Lives Saved</dt><dd>' + firefly.lives_saved + '</dd>' +
-      '<dt>Total Time</dt><dd>' + firefly.total_time + '</dd>' +
+      '<dt>Newborns Treated</dt><dd>' + firefly.lives_saved + '</dd>' +
+      '<dt>Total Hours</dt><dd>' + firefly.total_time + '</dd>' +
       '</div>';
 
       var infowindow = new google.maps.InfoWindow({ content: infowindowContent });
