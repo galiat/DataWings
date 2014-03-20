@@ -3,10 +3,10 @@ class Hospital < ActiveRecord::Base
   validates_uniqueness_of :name
   after_validation :geocode#, :if => :address_changed?
 
-  def total_time
+  def total_hours
   end
 
-  def lives_saved
+  def newborns_treated
   end
 
 

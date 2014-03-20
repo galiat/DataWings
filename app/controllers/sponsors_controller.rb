@@ -22,7 +22,7 @@ class SponsorsController < ApplicationController
   end
 
   def fireflies
-    render json: @sponsor.fireflies, methods: [ :location, :lives_saved, :total_time, :name ]
+    render json: @sponsor.fireflies, methods: [ :location, :newborns_treated, :total_hours, :name ]
   end
 
   # POST /sponsors

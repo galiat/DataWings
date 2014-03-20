@@ -7,7 +7,7 @@
 %h1
   = @sponsor.name
 %h2.yay
-  = "Your #{@sponsor.fireflies.count} Firefly treated #{@sponsor.lives_saved} #{'newborn'.pluralize(@sponsor.lives_saved)} so far!"
+  = "Your #{@sponsor.fireflies.count} Firefly treated #{@sponsor.newborns_treated} #{'newborn'.pluralize(@sponsor.newborns_treated)} so far!"
 
 %p
   My Fireflies
@@ -22,8 +22,8 @@
     %tr{ id: "device-row-#{firefly.device_id}" }
       %td= firefly.device_id
       %td= firefly.hospital.try :name
-      %td= firefly.total_time
-      %td= firefly.lives_saved
+      %td= firefly.total_hours
+      %td= firefly.newborns_treated
 
 %br
 

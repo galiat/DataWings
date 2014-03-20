@@ -8,12 +8,12 @@ class Firefly < ActiveRecord::Base
      "#{hospital.try(:name)} #{device_id}"
   end
 
-  def total_time
-    data_transmition.inject(0){|sum, dt| sum + dt.total_time}
+  def total_hours
+    data_transmition.inject(0){|sum, dt| sum + dt.total_hours}
   end
 
-  def lives_saved
-    (total_time/(25 * 2.5)).round
+  def newborns_treated
+    (total_hours/(25 * 2.5)).round
   end
 
   def location
