@@ -1,13 +1,9 @@
-class Hospital < ActiveRecord::Base
+class Hospital < DatawingsRecord
   geocoded_by :location
   validates_uniqueness_of :name
   after_validation :geocode#, :if => :address_changed?
 
-  def total_hours
-  end
-
-  def newborns_treated
-  end
+  has_many :fireflies
 
 
 

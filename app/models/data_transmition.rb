@@ -1,4 +1,4 @@
-class DataTransmition < ActiveRecord::Base
+class DataTransmition < DatawingsRecord
   belongs_to :firefly
   validates_presence_of :firefly_id
 
