@@ -11,12 +11,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140316023708) do
+ActiveRecord::Schema.define(version: 20140417150504) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "data_transmitions", force: true do |t|
+  create_table "data_transmissions", force: true do |t|
     t.integer  "firefly_id"
     t.datetime "sent_at"
     t.integer  "hour_meter"
@@ -29,7 +29,7 @@ ActiveRecord::Schema.define(version: 20140316023708) do
     t.datetime "updated_at"
   end
 
-  add_index "data_transmitions", ["firefly_id"], name: "index_data_transmitions_on_firefly_id", using: :btree
+  add_index "data_transmissions", ["firefly_id"], name: "index_data_transmissions_on_firefly_id", using: :btree
 
   create_table "fireflies", force: true do |t|
     t.string   "device_id"

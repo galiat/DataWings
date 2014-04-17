@@ -1,9 +1,9 @@
-= form_for @data_transmition do |f|
-  - if @data_transmition.errors.any?
+= form_for @data_transmission do |f|
+  - if @data_transmission.errors.any?
     #error_explanation
-      %h2= "#{pluralize(@data_transmition.errors.count, "error")} prohibited this data_transmition from being saved:"
+      %h2= "#{pluralize(@data_transmission.errors.count, "error")} prohibited this data_transmission from being saved:"
       %ul
-        - @data_transmition.errors.full_messages.each do |msg|
+        - @data_transmission.errors.full_messages.each do |msg|
           %li= msg
 
   .field

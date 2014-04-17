@@ -1,6 +1,6 @@
 Datawings::Application.routes.draw do
   get "welcome/index"
-  resources :data_transmitions do
+  resources :data_transmissions do
     collection do
       post :create_by_sms
     end

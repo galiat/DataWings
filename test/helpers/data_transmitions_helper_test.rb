@@ -1,4 +1,4 @@
 require 'test_helper'
 
-class DataTransmitionsHelperTest < ActionView::TestCase
+class DataTransmissionsHelperTest < ActionView::TestCase
 end

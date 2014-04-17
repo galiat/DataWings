@@ -1,7 +1,7 @@
 class Firefly < DatawingsRecord
   belongs_to :hospital
   belongs_to :sponsor
-  has_many :data_transmitions
+  has_many :data_transmissions
 
   validates_uniqueness_of :device_id
   validates_presence_of :device_id
@@ -15,7 +15,7 @@ class Firefly < DatawingsRecord
   end
 
   def total_hours
-    data_transmitions.inject(0){|sum, dt| sum + dt.total_hours}
+    data_transmissions.inject(0){|sum, dt| sum + dt.total_hours}
   end
 
 end

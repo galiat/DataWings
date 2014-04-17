@@ -1,14 +1,14 @@
 require 'test_helper'
 
-class DataTransmitionsControllerTest < ActionController::TestCase
+class DataTransmissionsControllerTest < ActionController::TestCase
   setup do
-    @data_transmition = data_transmitions(:one)
+    @data_transmission = data_transmissions(:one)
   end
 
   test "should get index" do
     get :index
     assert_response :success
-    assert_not_nil assigns(:data_transmitions)
+    assert_not_nil assigns(:data_transmissions)
   end
 
   test "should get new" do
@@ -16,34 +16,34 @@ class DataTransmitionsControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "should create data_transmition" do
-    assert_difference('DataTransmition.count') do
-      post :create, data_transmition: { error_code: @data_transmition.error_code, firefly_id: @data_transmition.firefly_id, high_temp: @data_transmition.high_temp, hour_meter: @data_transmition.hour_meter, low_temp: @data_transmition.low_temp, max_voltage: @data_transmition.max_voltage, min_voltage: @data_transmition.min_voltage, sent_at: @data_transmition.sent_at }
+  test "should create data_transmission" do
+    assert_difference('DataTransmission.count') do
+      post :create, data_transmission: { error_code: @data_transmission.error_code, firefly_id: @data_transmission.firefly_id, high_temp: @data_transmission.high_temp, hour_meter: @data_transmission.hour_meter, low_temp: @data_transmission.low_temp, max_voltage: @data_transmission.max_voltage, min_voltage: @data_transmission.min_voltage, sent_at: @data_transmission.sent_at }
     end
 
-    assert_redirected_to data_transmition_path(assigns(:data_transmition))
+    assert_redirected_to data_transmission_path(assigns(:data_transmission))
   end
 
-  test "should show data_transmition" do
-    get :show, id: @data_transmition
+  test "should show data_transmission" do
+    get :show, id: @data_transmission
     assert_response :success
   end
 
   test "should get edit" do
-    get :edit, id: @data_transmition
+    get :edit, id: @data_transmission
     assert_response :success
   end
 
-  test "should update data_transmition" do
-    patch :update, id: @data_transmition, data_transmition: { error_code: @data_transmition.error_code, firefly_id: @data_transmition.firefly_id, high_temp: @data_transmition.high_temp, hour_meter: @data_transmition.hour_meter, low_temp: @data_transmition.low_temp, max_voltage: @data_transmition.max_voltage, min_voltage: @data_transmition.min_voltage, sent_at: @data_transmition.sent_at }
-    assert_redirected_to data_transmition_path(assigns(:data_transmition))
+  test "should update data_transmission" do
+    patch :update, id: @data_transmission, data_transmission: { error_code: @data_transmission.error_code, firefly_id: @data_transmission.firefly_id, high_temp: @data_transmission.high_temp, hour_meter: @data_transmission.hour_meter, low_temp: @data_transmission.low_temp, max_voltage: @data_transmission.max_voltage, min_voltage: @data_transmission.min_voltage, sent_at: @data_transmission.sent_at }
+    assert_redirected_to data_transmission_path(assigns(:data_transmission))
   end
 
-  test "should destroy data_transmition" do
-    assert_difference('DataTransmition.count', -1) do
-      delete :destroy, id: @data_transmition
+  test "should destroy data_transmission" do
+    assert_difference('DataTransmission.count', -1) do
+      delete :destroy, id: @data_transmission
     end
 
-    assert_redirected_to data_transmitions_path
+    assert_redirected_to data_transmissions_path
   end
 end

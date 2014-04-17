@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class DataTransmitionTest < ActiveSupport::TestCase
+class DataTransmissionTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end
