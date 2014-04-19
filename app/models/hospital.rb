@@ -5,6 +5,5 @@ class Hospital < DatawingsRecord
 
   has_many :fireflies
 
-
-
+  scope :by_sponsor,  -> (sponsor){joins(fireflies: :sponsor).uniq.where('fireflies.sponsor_id' => sponsor.id)}
 end
