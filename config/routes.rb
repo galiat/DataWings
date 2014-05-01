@@ -1,4 +1,5 @@
 Datawings::Application.routes.draw do
+  devise_for :users
   get "welcome/index"
   resources :data_transmissions do
     collection do
