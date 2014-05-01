@@ -30,9 +30,14 @@
           %a.brand(href="#") Datawings
           .container.nav-collapse
             %ul.nav
-              %li= link_to "Link 1", "/path1"
-              %li= link_to "Link 2", "/path2"
-              %li= link_to "Link 3", "/path3"
+              %li
+                = link_to 'Sponsors', sponsors_path
+              %li
+                = link_to 'Hospitals', hospitals_path
+              %li
+                = link_to 'Firefly', fireflies_path
+              %li
+                = link_to 'Data', data_transmissions_path
             %ul.nav.pull-right
               %li= link_to "Logout", destroy_user_session_path, method: :delete if user_signed_in?
 
@@ -42,4 +47,5 @@
       = yield
 
       %footer
-        %p &copy; Company 2014
+        %br
+        %p &copy; Datawings 2014
