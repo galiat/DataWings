@@ -1,0 +1,43 @@
+Viz notes
+Do maps by country.
+1) # treated per hospital (color) w/ key
+2) on hover:
+  list how many treated,
+  # at each
+  name
+
+
+Stream graph for total # treated
++ projection
+break down by hospital
+ on o=hover show # of devices & hostpital name
+
+Social sharing of maps (non working twitter link!)
+
+Custom Project Naming sponsor & NGO)
+
+===============
+NGO
+exportable data of one hospital (fake)
+
+example 3 dev @ one hospital... stream graph
+
+hours on X week
+notations on graph?
+
+==========
+Mfg
+
+Map w/ alerts
+ 1) disuse (days off threshhold)
+ 2) errors
+
+Table w/ alerts
+
+export error report
+
+
+1) personors
+2) I'll be happy
+3) in the first 10 minutes
+4) by the end of tonight I'd like to be able to...
