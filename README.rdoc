@@ -9,3 +9,21 @@ Using data to provide health centers in limited resource settings with high impa
 
 ==Goal for Hacking Medicine's Grand Hackfest
 To design and prototype a data transmission system between the FireFly infant phototherapy device, the manufacturer, and Design That Matters to track use and facilitate maintenance of the device.
+
+==Users
+* Individual/Group Sponsor
+  * View all firefly by country on a map
+  * stream graph 
+    * total # treated so far
+    * projected total # to be treated
+    * break down by firefly & hospital
+  * Custom Project Name by country
+  * Share on social media
+* NGO
+  * all the things the Sponsor wants
+  * graph of hours on by week for assesing if more training is need
+* Hospital
+* Designer
+* Manufacturer
+  * seeing devices that have been offline for a certain amount of time
+  * measure if training efforts are needed & if they make a difference
