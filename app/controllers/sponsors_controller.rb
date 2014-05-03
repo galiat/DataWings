@@ -1,5 +1,6 @@
 class SponsorsController < ApplicationController
   before_action :set_sponsor, only: [:show, :edit, :update, :destroy, :fireflies]
+  helper_method :hospitals
 
   # GET /sponsors
   # GET /sponsors.json
@@ -24,6 +25,7 @@ class SponsorsController < ApplicationController
   def fireflies
     render json: @sponsor.fireflies, methods: [ :location, :newborns_treated, :total_hours, :name ]
   end
+
 
   # POST /sponsors
   # POST /sponsors.json
@@ -66,6 +68,14 @@ class SponsorsController < ApplicationController
   end
 
   private
+    def hospitals
+      @hospitals ||= @sponsor.hospitals.where country_code
+    end
+
+    def country_code
+      params.permit :country_code
+    end
+
     # Use callbacks to share common setup or constraints between actions.
     def set_sponsor
       @sponsor = Sponsor.find(params[:id] || params[:sponsor_id])

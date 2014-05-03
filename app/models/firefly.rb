@@ -6,6 +6,13 @@ class Firefly < DatawingsRecord
   validates_uniqueness_of :device_id
   validates_presence_of :device_id
 
+  scope :by_sponsor,  -> (sponsor){where('fireflies.sponsor_id' => sponsor.id)}
+
+
+  def by_country_and_hospital
+    {countries:[{'VT' :  {hospitals: [{name: 'foo', lat: '12', long:'23' {fireflies: [{hours_on: '12', lives_saved: 'newborns treated'} ]}} ]}} ]}
+  end
+
   def name
      "#{hospital.try(:name)} #{device_id}"
   end
