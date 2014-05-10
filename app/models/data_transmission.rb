@@ -3,6 +3,12 @@ class DataTransmission < DatawingsRecord
   validates_presence_of :firefly_id
   default_scope order(:sent_at)
 
+  scope :from_week, ->(time) { where("sent_at < ?", time) }
+
+  def by_week
+    raw = DataTransmission.connection.select_all("SELECT firefly_id, extract(week from sent_at) as week, extract(year from sent_at) as year, sum(hour_meter) hour_meter FROM data_transmissions group by firefly_id, week, year")
+    raw.map { |row| DataTransmission.new(firefly_id: row['firefly_id'], hour_meter: row['hour_meter'], sent_at: Date.strptime(row['year']+row['week'],'%Y%W'))}
+  end
 
   def total_hours
     hour_meter.nil? ? 0 : hour_meter
