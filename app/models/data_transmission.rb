@@ -5,8 +5,9 @@ class DataTransmission < DatawingsRecord
 
   scope :from_week, ->(time) { where("sent_at < ?", time) }
 
-  def by_week
-    raw = DataTransmission.connection.select_all("SELECT firefly_id, extract(week from sent_at) as week, extract(year from sent_at) as year, sum(hour_meter) hour_meter FROM data_transmissions group by firefly_id, week, year")
+  def self.by_week firefly_ids
+    in_firefly_ids = firefly_ids.to_s.sub('[', '(').sub(']', ')')
+    raw = DataTransmission.connection.select_all("SELECT firefly_id, extract(week from sent_at) as week, extract(year from sent_at) as year, sum(hour_meter) hour_meter FROM data_transmissions where firefly_id IN #{in_firefly_ids} group by firefly_id, week, year")
     raw.map { |row| DataTransmission.new(firefly_id: row['firefly_id'], hour_meter: row['hour_meter'], sent_at: Date.strptime(row['year']+row['week'],'%Y%W'))}
   end
 
