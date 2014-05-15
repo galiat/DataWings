@@ -11,7 +11,8 @@
     %th
 
   - @fireflies.each do |firefly|
-    %tr
+
+    %tr{:class=> firefly.problem ? 'problem' : '' }
       %td= firefly.device_id
       %td= firefly.hospital.try :name
       %td= firefly.sponsor.try :name
