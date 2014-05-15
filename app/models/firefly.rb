@@ -29,4 +29,8 @@ class Firefly < DatawingsRecord
     data_transmissions.inject(0){|sum, dt| sum + dt.total_hours}
   end
 
+  def recent_errors
+    data_transmissions.last(5).reject{|dt| !dt.error_code}.map{|dt| dt.error_code}
+  end
+
 end

@@ -5,7 +5,8 @@
     %th Device
     %th Hospital
     %th Sponsor
-    %th
+    %th Last Heard From
+    %th Recent Errors
     %th
     %th
 
@@ -14,6 +15,8 @@
       %td= firefly.device_id
       %td= firefly.hospital.try :name
       %td= firefly.sponsor.try :name
+      %td= time_ago_in_words firefly.data_transmissions.last.try :sent_at
+      %td= firefly.recent_errors.join ', '
       %td= link_to 'Show', firefly
       %td= link_to 'Edit', edit_firefly_path(firefly)
       %td= link_to 'Destroy', firefly, :method => :delete, :data => { :confirm => 'Are you sure?' }
