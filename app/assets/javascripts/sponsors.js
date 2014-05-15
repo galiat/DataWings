@@ -1,4 +1,4 @@
-function initialize() {
+$(function() {
   var mapOptions = {
     center: new google.maps.LatLng(42.3519, -71.0582),
     zoom: 8,
@@ -42,6 +42,4 @@ function initialize() {
 
     map.fitBounds (bounds);
   });
-}
-
-google.maps.event.addDomListener(window, 'load', initialize);
+});

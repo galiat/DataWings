@@ -8,10 +8,10 @@ class Firefly < DatawingsRecord
 
   scope :by_sponsor,  -> (sponsor){where('fireflies.sponsor_id' => sponsor.id)}
 
-  def by_week
-    start = data_transmissions.first.sent_at
-    data_transmissions.where("sent_at >= ? and sent_at < ?", start, start+7.days)
-  end
+  # def by_week
+  #   start = data_transmissions.first.sent_at
+  #   data_transmissions.where("sent_at >= ? and sent_at < ?", start, start+7.days)
+  # end
 
   def by_country_and_hospital
     #{countries:[{'VT' :  {hospitals: [{name: 'foo', lat: '12', long:'23' {fireflies: [{hours_on: '12', lives_saved: 'newborns treated'} ]}} ]}} ]}

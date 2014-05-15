@@ -11,4 +11,5 @@ class Hospital < DatawingsRecord
   def country_code
     self.country_code = attributes[:country_code] || 'US' #TODO use geocoder
   end
+
 end

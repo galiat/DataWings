@@ -5,5 +5,5 @@ end
 
 json.array!(@hospitals) do |hospital|
   json.key hospital.name
-  json.values []
+  json.values [DataTransmission.by_week(hospital.firefly_ids)]
 end
