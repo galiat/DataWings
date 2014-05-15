@@ -8,33 +8,34 @@
 #mission{
 
 }
-
-//Via http://www.techrepublic.com/blog/web-designer/html5-figure-and-figure-caption-elements/2072/
-figure  {
-  display: block;
-  margin-before: 1em;
-  margin-after: 1em;
-  margin-start: 40px;
-  margin-end: 40px;
-  padding: 10px
-}
-body {
-       display: block;
-}
-img {
-  border: 1px solid #323232;
-  padding: 5px;
-  background: #fff;
-  border-radius: 12px;
-  box-shadow: 3px 3px 5px rgba(50, 50, 50, .5);
-}
-figcaption {
-  padding: 5px;
-  border: none;
-  background: transparent;
-  word-wrap:normal;
-  text-align: center;
-}
-a {
-  text-decoration:none;
+.continer{
+  //Via http://www.techrepublic.com/blog/web-designer/html5-figure-and-figure-caption-elements/2072/
+  figure  {
+    display: block;
+    margin-before: 1em;
+    margin-after: 1em;
+    margin-start: 40px;
+    margin-end: 40px;
+    padding: 10px
+  }
+  body {
+         display: block;
+  }
+  img {
+    border: 1px solid #323232;
+    padding: 5px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 3px 3px 5px rgba(50, 50, 50, .5);
+  }
+  figcaption {
+    padding: 5px;
+    border: none;
+    background: transparent;
+    word-wrap:normal;
+    text-align: center;
+  }
+  a {
+    text-decoration:none;
+  }
 }
