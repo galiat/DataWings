@@ -7,13 +7,13 @@
           %li= msg
 
   .field
-    = f.label :device_id, 'Device Id'
+    = f.label :device_id, 'Serial Number'
     = f.text_field :device_id
   .field
     = f.label :hospital
     = f.collection_select :hospital_id, Hospital.all, :id, :name, :include_blank => true
   .field
-    = f.label :sponsor
+    = f.label :sponsor, 'Donor'
     = f.collection_select :sponsor_id, Sponsor.all, :id, :name, :include_blank => true
   .actions
     = f.submit 'Save'

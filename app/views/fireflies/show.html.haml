@@ -1,13 +1,13 @@
 %p#notice= notice
 
 %p
-  %b Device:
+  %b Serial Number:
   = @firefly.device_id
 %p
   %b Hospital:
   = @firefly.hospital.try :name
 %p
-  %b Sponsor:
+  %b Donor:
   = @firefly.sponsor.try :name
 
 = link_to 'Edit', edit_firefly_path(@firefly)
