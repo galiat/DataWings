@@ -1,10 +1,11 @@
-%h1 Listing hospitals
+%h1 Data by Hospital
 
 %table{class: 'table'}
   %tr
     %th
     %th Name
     %th Location
+    %th # of Devices
     - if current_user
       %th
       %th
@@ -14,6 +15,7 @@
       %td= link_to 'Show', hospital
       %td= hospital.name
       %td= hospital.location
+      %td= hospital.fireflies.count
       - if current_user
         %td= link_to 'Edit', edit_hospital_path(hospital)
         %td= link_to 'Destroy', hospital, :method => :delete, :data => { :confirm => 'Are you sure?' }
