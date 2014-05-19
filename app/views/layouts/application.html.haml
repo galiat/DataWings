@@ -33,13 +33,15 @@
           .container.nav-collapse
             %ul.nav
               %li
-                = link_to 'Sponsors', sponsors_path
+                = link_to 'By Donor', sponsors_path
               %li
-                = link_to 'Hospitals', hospitals_path
+                = link_to 'By Hospital', hospitals_path
               %li
-                = link_to 'Firefly', fireflies_path
+                = link_to 'Current Status', fireflies_path
               %li
-                = link_to 'Data', data_transmissions_path
+                = link_to 'Raw Data', data_transmissions_path
+              %li
+                = link_to 'Thanks'
             %ul.nav.pull-right
               %li= link_to "Logout", destroy_user_session_path, method: :delete if user_signed_in?
 
