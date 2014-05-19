@@ -1,4 +1,4 @@
-%h1 Listing data_transmissions
+%h1 Raw Data: All SMS Transmissions
 
 %table{class: 'table'}
   %tr
@@ -15,7 +15,7 @@
       %th
       %th
 
-  - @data_transmissions.each do |data_transmission|
+  - @data_transmissions.desc.each do |data_transmission|
     %tr{class: 'data'}
       %td= data_transmission.firefly.name
       %td= data_transmission.sent_at
