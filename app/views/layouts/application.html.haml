@@ -42,16 +42,19 @@
                 = link_to 'Raw Data', data_transmissions_path
               %li
                 = link_to 'Thanks'
-            %ul.nav.pull-right
-              %li= link_to "Logout", destroy_user_session_path, method: :delete if user_signed_in?
-
     .container-fluid
-
       = bootstrap_flash
       = yield
 
       %footer
         %br
         %p &copy; Datawings 2014
+        .logos
+          %p
+            = image_tag 'datawings_logo.png', {size: '130'}
+          %p
+            = image_tag 'dtm_small.png', {size: '130'}
         - unless current_user
           = link_to 'Sign in', new_user_session_path
+        -else
+          = link_to "Logout", destroy_user_session_path, method: :delete
