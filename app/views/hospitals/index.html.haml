@@ -1,27 +1,4 @@
-%h1 Data by Hospital
-
-%table{class: 'table'}
-  %tr
-    %th
-    %th Name
-    %th Location
-    %th # of Devices
-    - if current_user
-      %th
-      %th
-
-  - @hospitals.each do |hospital|
-    %tr{class: 'data'}
-      %td= link_to 'Show', hospital
-      %td= hospital.name
-      %td= hospital.location
-      %td= hospital.fireflies.count
-      - if current_user
-        %td= link_to 'Edit', edit_hospital_path(hospital)
-        %td= link_to 'Destroy', hospital, :method => :delete, :data => { :confirm => 'Are you sure?' }
-
-%br
-
+%h1 Usage (in hours) by Hospital
 
 #chart
   %svg{height: 400}
@@ -42,7 +19,7 @@
       //Format x-axis labels with custom function.
       chart.xAxis
           .tickFormat(function(d) {
-            return d3.time.format('%Y-%M-%d')(new Date(d))
+            return d3.time.format('%Y-%m-%d')(new Date(d))
       });
 
       chart.yAxis
@@ -57,6 +34,27 @@
       return chart;
     });
   })
+%br
+%h3 Hospitals
+%table{class: 'table'}
+  %tr
+    %th
+    %th Name
+    %th Location
+    %th # of Devices
+    - if current_user
+      %th
+      %th
+  - @hospitals.each do |hospital|
+    %tr{class: 'data'}
+      %td= link_to 'Show', hospital
+      %td= hospital.name
+      %td= hospital.location
+      %td= hospital.fireflies.count
+      - if current_user
+        %td= link_to 'Edit', edit_hospital_path(hospital)
+        %td= link_to 'Destroy', hospital, :method => :delete, :data => { :confirm => 'Are you sure?' }
 
-
-= link_to 'New Hospital', new_hospital_path
+- if current_user
+  %br
+  = link_to 'New Hospital', new_hospital_path
