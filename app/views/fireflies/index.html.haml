@@ -2,26 +2,27 @@
 
 %table{class: 'table'}
   %tr
+    %th
     %th Device
     %th Hospital
     %th Sponsor
     %th Last Heard From
     %th Recent Errors
-    %th
-    %th
-
+    - if current_user
+      %th
+      %th
   - @fireflies.each do |firefly|
-
-    %tr{:class=> firefly.problem ? 'problem' : '' }
+    %tr{:class=> firefly.problem ? 'problem data' : 'data' }
+      %td= link_to 'Show', firefly
       %td= firefly.device_id
       %td= firefly.hospital.try :name
       %td= firefly.sponsor.try :name
       %td= time_ago_in_words firefly.data_transmissions.last.try :sent_at
       %td= firefly.recent_errors.join ', '
-      %td= link_to 'Show', firefly
-      %td= link_to 'Edit', edit_firefly_path(firefly)
-      %td= link_to 'Destroy', firefly, :method => :delete, :data => { :confirm => 'Are you sure?' }
+      - if current_user
+        %td= link_to 'Edit', edit_firefly_path(firefly)
+        %td= link_to 'Destroy', firefly, :method => :delete, :data => { :confirm => 'Are you sure?' }
 
 %br
-
-= link_to 'New Firefly', new_firefly_path
+- if current_user
+  = link_to 'New Firefly', new_firefly_path

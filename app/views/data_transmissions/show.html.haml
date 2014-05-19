@@ -24,7 +24,7 @@
 %p
   %b Error code:
   = @data_transmission.error_code
-
-= link_to 'Edit', edit_data_transmission_path(@data_transmission)
-\|
+- if current_user
+  = link_to 'Edit', edit_data_transmission_path(@data_transmission)
+  \|
 = link_to 'Back', data_transmissions_path

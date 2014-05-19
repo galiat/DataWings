@@ -27,7 +27,7 @@
 %br
 
 #map-canvas
-
-= link_to 'Edit', edit_sponsor_path(@sponsor)
-\|
+- if current_user
+  = link_to 'Edit', edit_sponsor_path(@sponsor)
+  \|
 = link_to 'Back', sponsors_path

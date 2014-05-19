@@ -53,3 +53,5 @@
       %footer
         %br
         %p &copy; Datawings 2014
+        - unless current_user
+          = link_to 'Sign in', new_user_session_path

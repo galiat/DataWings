@@ -10,12 +10,13 @@
     %th Min voltage
     %th Max voltage
     %th Error code
-    %th
-    %th
-    %th
+    - if current_user
+      %th
+      %th
+      %th
 
   - @data_transmissions.each do |data_transmission|
-    %tr
+    %tr{class: 'data'}
       %td= data_transmission.firefly.name
       %td= data_transmission.sent_at
       %td= data_transmission.hour_meter
@@ -24,10 +25,11 @@
       %td= data_transmission.min_voltage
       %td= data_transmission.max_voltage
       %td= data_transmission.error_code
-      %td= link_to 'Show', data_transmission
-      %td= link_to 'Edit', edit_data_transmission_path(data_transmission)
-      %td= link_to 'Destroy', data_transmission, :method => :delete, :data => { :confirm => 'Are you sure?' }
+      - if current_user
+        %td= link_to 'Show', data_transmission
+        %td= link_to 'Edit', edit_data_transmission_path(data_transmission)
+        %td= link_to 'Destroy', data_transmission, :method => :delete, :data => { :confirm => 'Are you sure?' }
 
 %br
-
-= link_to 'New Data Transmission', new_data_transmission_path
+- if current_user
+  = link_to 'New Data Transmission', new_data_transmission_path

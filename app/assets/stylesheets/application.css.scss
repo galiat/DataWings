@@ -12,5 +12,6 @@
  *= require nv.d3
  *= require_tree .
  */
- tr:hover{background: aliceblue}
-
+.data{
+  &:hover{background: aliceblue}
+}
