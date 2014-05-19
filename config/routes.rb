@@ -15,6 +15,7 @@ Datawings::Application.routes.draw do
     get :fireflies
   end
 
-  # You can have the root of your site routed with "root"
+  get :thanks, to: 'welcome#thanks'
+
   root 'welcome#index'
 end

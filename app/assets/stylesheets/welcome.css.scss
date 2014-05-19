@@ -2,13 +2,13 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 #container{
-  width: 450px;
+  width: 575px;
 }
 
 #mission{
 
 }
-#container{
+#images{
   //Via http://www.techrepublic.com/blog/web-designer/html5-figure-and-figure-caption-elements/2072/
   figure  {
     display: block;
@@ -19,7 +19,7 @@
     padding: 10px
   }
   body {
-         display: block;
+    display: block;
   }
   img {
     border: 1px solid #323232;
@@ -33,9 +33,6 @@
     border: none;
     background: transparent;
     word-wrap:normal;
-    text-align: center;
-  }
-  a {
-    text-decoration:none;
+    position: relative;
   }
 }
