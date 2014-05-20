@@ -30,11 +30,11 @@ class Firefly < DatawingsRecord
   end
 
   def recent_errors
-    data_transmissions.last(5).reject{|dt| !dt.error_code}.map{|dt| dt.error_code}
+    data_transmissions.desc.first(5).reject{|dt| dt.error_code.blank?}.map{|dt| dt.error_code}
   end
 
   def problem acceptable_days = 5
-    data_transmissions.last.sent_at < (DateTime.now - acceptable_days.days) || recent_errors.size == 0
+    data_transmissions.desc.first.sent_at < (DateTime.now - acceptable_days.days) || recent_errors.size > 0
   end
 
 end

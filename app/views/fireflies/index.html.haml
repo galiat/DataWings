@@ -17,7 +17,7 @@
       %td= firefly.device_id
       %td= firefly.hospital.try :name
       %td= firefly.sponsor.try :name
-      %td= time_ago_in_words firefly.data_transmissions.last.try :sent_at
+      %td= time_ago_in_words firefly.data_transmissions.desc.first.try :sent_at
       %td= firefly.recent_errors.join ', '
       - if current_user
         %td= link_to 'Edit', edit_firefly_path(firefly)

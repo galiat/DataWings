@@ -2,7 +2,9 @@ class DataTransmission < DatawingsRecord
   belongs_to :firefly
   validates_presence_of :firefly_id
 
-  scope :desc, order('data_transmissions.sent_at DESC')
+
+
+  scope :desc, -> {order('data_transmissions.sent_at DESC')}
   scope :from_week, ->(time) { where("sent_at < ?", time) }
 
   def self.by_week(firefly_ids)
